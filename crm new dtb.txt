@@ -1,0 +1,72 @@
+-- Database: crm
+
+-- DROP DATABASE IF EXISTS crm;
+
+CREATE DATABASE crm
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Russian_Kazakhstan.1251'
+    LC_CTYPE = 'Russian_Kazakhstan.1251'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+	
+	create table sources(
+	id bigint primary key,
+	title varchar(30) not null
+	);
+	
+	create table patient(
+	id bigint primary key,
+	firstName varchar(30) not null,
+	lastName varchar(30) not null,
+	email varchar(20) not null,
+	address varchar(30) not null,
+	phone varchar(12) not null,
+	date_of_birth date not null,
+	gender char not null,
+	comment varchar(20),
+	allergy varchar(20),
+	illness varchar(20),
+	date_added date,
+	date_modified date,
+	source_id int references sources(id)
+	);
+	
+	create table specialist(
+	id bigint primary key,
+	name varchar(20) not null
+	);
+	
+	
+	create table doctor(
+	id bigint primary key,
+	firstName varchar(30) not null,
+	lastName varchar(30) not null,
+	email varchar(20) not null,
+	address varchar(30) not null,
+	date_of_birth date not null,
+	gender char not null,
+	phone varchar(12) not null,
+	specialist_id int references specialist(id)
+	);
+	
+	create table user_data(
+	id bigint primary key,
+	email varchar(20) not null,
+	passwordd varchar(15) not null,
+	username varchar(15) not null,
+	doctor_id int references doctor(id),
+	patient_id int references patient(id)
+	);
+	
+	create table role_data(
+	id bigint primary key,
+	name varchar(20) not null
+	);
+	
+	create table user_role(
+	id bigint primary key,
+	role_id int references role_data(id),
+	user_id int references user_data(id)
+	);
