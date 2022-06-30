@@ -70,3 +70,89 @@ CREATE DATABASE crm
 	role_id int references role_data(id),
 	user_id int references user_data(id)
 	);
+	
+	
+	insert into specialist values (1, 'стоматолог');
+	insert into specialist values (2, 'медсестра');
+	
+	insert into doctor values (1, 'Данияр', 'Болатов', 'daniyar78@gmail.com', 'Байтурсынова 171/2', '12-01-1978', 'M', '87471234567', 1);
+	insert into doctor values (2, 'Сауле', 'Акмурзаева', 'saulewka@gmail.ru', 'Сейфуллина 45/1д', '4-05-1975', 'F', '87004511112', 1);
+	insert into doctor values (3, 'Алтын', 'Даурембеков', 'daurembek@gmail.com', 'Аль-Фараби 475/1', '22-10-1974', 'M', '87077000880', 1);
+	insert into doctor values (4, 'Даулет', 'Баймуратов', 'baimuratov@gmail.com', 'Желтоксан 27', '8-04-1985', 'M', '87084004040', 2);
+	insert into doctor values (5, 'Аяулым', 'Сатыбалдиева', 'satybaldy@gmail.com', 'Сейфулинна 585д', '5-05-1987', 'F', '87479541454', 1);
+	insert into doctor values (6, 'Дана', 'Турысбек', 'dana_89@gmail.com', 'мкрн Алтай 10/1', '8-11-1989', 'F', '87000800201', 2);
+	
+	
+	insert into sources values (1, 'с рекламы');
+	insert into sources values (2, 'с таргета');
+	insert into sources values (3, 'с инстаграмма');
+	insert into sources values (4, 'сарафанное радио');
+	
+	select * from specialist;
+	
+	select * from doctor;
+	
+	select * from sources;
+	
+	
+	insert into patient values(1, 'Диляра', 'Акмурзаева', 'dilya@gmail.com', 'Желтоксан 21', '87071231015', '15-01-2001', 'F', 'нет комментариев', 'аллергия на орехи', '', null, null, 1);
+	insert into patient values(2, 'Валерий', 'Абрамов', 'abramov@mgmail.com', 'Макатаева 254/12', '87074597894', '2-08-1975', 'M', 'нет комментариев', null, null, null, null, 2);
+	insert into patient values(3, 'Агафон', 'Даваыдов', 'agafon@gmail.com', 'Фурмонова 47/1', '87475051213', '4-04-2000', 'M', null, null, null, null, null, 3);
+	insert into patient values(4, 'Юстин', 'Мартынов', 'martyn@gmail.com', 'мкрн Шугыла 15', '87001547898', '12-11-1985', 'M', null, null, null, null, null, 4);
+	insert into patient values(5, 'Венера', 'Кудряшева', 'venera09@gmail.com', 'мкрн Жулдыз 45/1', '870001231010', '10-10-1975', 'F', null, null, null, null, null, 4);
+	insert into patient values(6, 'Нега', 'Рыбакова', 'rybakova@gmail.com', 'ЖК Байтал 4/12', '87074004040', '25-10-1979', 'F', null, null, null, null, null, 4);
+	insert into patient values(7, 'Аза', 'Дьячкова', 'aza1989@gmail.com', 'ЖК Шахристан 1/12', '87078004545', '12-01-1989', 'F', null, null, null, null, null, 2);
+	insert into patient values(8, 'Светлана', 'Селиверстова', 'svetass@gmail.com', 'Жас Канат 1/15', '87471201213', '4-01-1998', 'F', null, null, null, null, null, 2);
+	
+	
+	select * from patient; 
+	
+	insert into role_data values (1, 'ADMIN');
+	insert into role_data values (2, 'USER');
+	
+	create table activity(
+	id int primary key,
+	activated boolean,
+	uuid varchar(30),
+	user_id int references user_data(id)
+	);
+	
+	insert into specialist values (1, 'стоматолог');
+	insert into specialist values (2, 'медсестра');
+	
+	insert into doctor values (1, 'Данияр', 'Болатов', 'daniyar78@gmail.com', 'Байтурсынова 171/2', '12-01-1978', 'M', '87471234567', 1);
+	insert into doctor values (2, 'Сауле', 'Акмурзаева', 'saulewka@gmail.ru', 'Сейфуллина 45/1д', '4-05-1975', 'F', '87004511112', 1);
+	insert into doctor values (3, 'Алтын', 'Даурембеков', 'daurembek@gmail.com', 'Аль-Фараби 475/1', '22-10-1974', 'M', '87077000880', 1);
+	insert into doctor values (4, 'Даулет', 'Баймуратов', 'baimuratov@gmail.com', 'Желтоксан 27', '8-04-1985', 'M', '87084004040', 2);
+	insert into doctor values (5, 'Аяулым', 'Сатыбалдиева', 'satybaldy@gmail.com', 'Сейфулинна 585д', '5-05-1987', 'F', '87479541454', 1);
+	insert into doctor values (6, 'Дана', 'Турысбек', 'dana_89@gmail.com', 'мкрн Алтай 10/1', '8-11-1989', 'F', '87000800201', 2);
+	
+	
+	insert into sources values (1, 'с рекламы');
+	insert into sources values (2, 'с таргета');
+	insert into sources values (3, 'с инстаграмма');
+	insert into sources values (4, 'сарафанное радио');
+	
+	select * from specialist;
+	
+	select * from doctor;
+	
+	select * from sources;
+	
+	
+	insert into patient values(1, 'Диляра', 'Акмурзаева', 'dilya@gmail.com', 'Желтоксан 21', '87071231015', '15-01-2001', 'F', 'нет комментариев', 'аллергия на орехи', '', null, null, 1);
+	insert into patient values(2, 'Валерий', 'Абрамов', 'abramov@mgmail.com', 'Макатаева 254/12', '87074597894', '2-08-1975', 'M', 'нет комментариев', null, null, null, null, 2);
+	insert into patient values(3, 'Агафон', 'Даваыдов', 'agafon@gmail.com', 'Фурмонова 47/1', '87475051213', '4-04-2000', 'M', null, null, null, null, null, 3);
+	insert into patient values(4, 'Юстин', 'Мартынов', 'martyn@gmail.com', 'мкрн Шугыла 15', '87001547898', '12-11-1985', 'M', null, null, null, null, null, 4);
+	insert into patient values(5, 'Венера', 'Кудряшева', 'venera09@gmail.com', 'мкрн Жулдыз 45/1', '870001231010', '10-10-1975', 'F', null, null, null, null, null, 4);
+	insert into patient values(6, 'Нега', 'Рыбакова', 'rybakova@gmail.com', 'ЖК Байтал 4/12', '87074004040', '25-10-1979', 'F', null, null, null, null, null, 4);
+	insert into patient values(7, 'Аза', 'Дьячкова', 'aza1989@gmail.com', 'ЖК Шахристан 1/12', '87078004545', '12-01-1989', 'F', null, null, null, null, null, 2);
+	insert into patient values(8, 'Светлана', 'Селиверстова', 'svetass@gmail.com', 'Жас Канат 1/15', '87471201213', '4-01-1998', 'F', null, null, null, null, null, 2);
+	
+	
+	select * from patient; 
+	
+	insert into role_data values (1, 'ADMIN');
+	insert into role_data values (2, 'USER');
+	
+	
